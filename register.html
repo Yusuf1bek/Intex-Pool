@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="images/icon-svg.svg">
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+    </style>
+</head>
+<body class="register-body">
+
+        <div class="fixed top-0 bottom-0 right-0 left-0 m-auto w-[621px] h-[519px] bg-white rounded-[25px] pt-[35px] pb=[46px] text-center">
+            <img class="mx-auto mb-[17px]" src="images/logo-img.svg" alt="Logo-Img" width="421" height="72">
+            <h2 class="text-[25px] text-[#A3A3A3] font-bold leading-[29.03px] mb-[10px]">Регистрация</h2>
+            <h3 class="text-[25px] text-[#A3A3A3] font-bold leading-[29.03px] mb-[76px]"> Введите ваше имя и новый пароль, чтобы получить доступ к системе.</h3>
+            <form class="register-form flex flex-col items-center">
+                <input id="name" autocomplete="off" placeholder="Ваше Имя" type="text" name="username" class="mb-4 w-[359px] py-[12px] text-center rounded-[17px] border-[1px] border-[#A3A3A3] font-bold text-[25px] shadow-md outline-none focus:shadow-[#3F8C8E]">
+                <input id="password" autocomplete="off" placeholder="Ваш пароль" type="password" name="userpassword" class="mb-[8px] w-[359px] py-[12px] text-center rounded-[17px] border-[1px] border-[#A3A3A3] font-bold text-[25px] shadow-md outline-none focus:shadow-[#3F8C8E]">
+                <button type="submit" class="mt-5 w-[237px] rounded-[10px] text-center text-white font-bold bg-[#3F8C8E] py-[6px] text-[22px]">Зарегистрироваться</button>
+            </form>
+        </div>
+    
+    <script src="js/Admin/register.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+    </script>
+</body>
+</html>

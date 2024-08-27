@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="images/icon-svg.svg">
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+    </style>
+</head>
+<body class="bg-[#F8F8F8]">
+        <div class="flex">
+            <nav class="w-[20%] bg-white h-[100vh]">
+                <div class="py-[34px] pl-[41px] border-b-[3px] border-[#EBEBFF]">
+                    <img src="./images/logo-img.svg" alt="Logo-Img" width="200">
+                </div>
+                <ul class="pt-[33px] space-y-[15px] pl-[44px]">
+                    <li>
+                        <a class="text-[25px] text-[#B4B4C6] leading-[35px] font-normal" href="./admin.html">Продукты</a>
+                    </li>
+                    <li>
+                        <a class="text-[25px] text-[#009398] leading-[35px] font-normal"  href="./order.html">Заказы</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="w-[80%]">
+                <div class="py-[43px] border-b-[3px] border-[#EBEBFF]"></div>
+            </div>
+        </div>
+
+    <script src="js/Admin/admin.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+    </script>
+</body>
+</html>
