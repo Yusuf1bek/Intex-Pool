@@ -39,10 +39,17 @@
                     </div>
                 </div>
                 <div class="pt-[22px] px-[42px] flex items-center justify-between mb-[40px]">
-                    <label class="cursor-pointer flex items-center space-x-[15px] shadow-xl w-[377px] inline-block py-[11px] pl-[34px] rounded-[30px] bg-white">
-                        <input class="w-[80%] py-[8px] text-[22px] outline-none border-r-[2px] border-[#E6E6E6]" autocomplete="off" type="text" placeholder="Найти" name="searching">
-                        <img src="./images/loupe.svg" alt="Loupe-Img" width="24" height="24">
-                    </label>
+                    <div class="relative">
+                        <label class="cursor-pointer flex items-center space-x-[15px] shadow-xl w-[377px] inline-block py-[11px] pl-[34px] rounded-[30px] bg-white">
+                            <input class="search-input w-[80%] py-[8px] text-[22px] outline-none border-r-[2px] border-[#E6E6E6]" autocomplete="off" type="text" placeholder="Найти" name="searching">
+                            <img src="./images/loupe.svg" alt="Loupe-Img" width="24" height="24">
+                        </label>
+                        <ul class="popap-list  overflow-hidden h-0 p-0 absolute bg-[#009398] w-full space-y-2">
+                            <li class="py-2 px-2 font-bold text-white rounded-md hover:bg-white hover:text-[#009398]">Salom</li>
+                            <li class="py-2 px-2 font-bold text-white rounded-md hover:bg-white hover:text-[#009398]">Salom</li>
+                            <li class="py-2 px-2 font-bold text-white rounded-md hover:bg-white hover:text-[#009398]">Salom</li>
+                        </ul>
+                    </div>
                     <button onclick="handlAddProductBtnClick()" class="bg-[#009398] py-[15px] rounded-[30px] text-white text-[20px] w-[210px] hover:bg-white hover:text-[#009398] duration-300 hover:border-[1px] hover:border-[#009398]">+ Добавить продукт</button>
                 </div>
                 <ul class="flex items-center justify-center space-x-[46px]">

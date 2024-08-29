@@ -202,3 +202,57 @@ function sureDeleteModal(id){
     localStorage.setItem("products", JSON.stringify(products))
 }
 // Delete function end
+
+// Searching functions start
+let elPopopList = document.querySelector(".popap-list")
+let elSearchInpput = document.querySelector(".search-input")
+
+elSearchInpput.addEventListener("input", function(e){
+    elPopopList.innerHTML = null
+    const filteredList = products.filter(item => item.newPrice.includes(e.target.value))
+    if(e.target.value && filteredList.length){
+        elPopopList.classList.remove("h-0")
+        elPopopList.classList.remove("p-0")
+        elPopopList.classList.add("p-2")
+        filteredList.forEach((item, index) => {
+            let elPopopItem = document.createElement("li")
+            elPopopItem.id = item.id
+            elPopopItem.className = "py-2 px-3 flex font-bold text-white rounded-md hover:bg-white hover:text-[#00398]"
+            elPopopItem.innerHTML = `
+                <span id=${item.id}${index + 1}></span>
+                <strong>${item.categoryId == "1" ? "Каркасные" : "Надувные"}</strong>
+                <p> id=${item.id}${item.newPrice}</p>
+            `
+            elPopopList.appendChild(elPopopItem)
+
+            elPopopItem.addEventListener("click", function(e){
+                const filteredProduct = products.filter(item => item.id == e.target.id)
+                renderProducts(filteredProduct,filteredProduct[0].categoryId)
+                if(filteredProduct[0].categoryId == "1"){
+                    elFrameTitle.className = "frame-title font-bold text-[25px] text-[#009398] pb-[8px] border-b-[2px] border-[#009398] cursor-pointer"
+                    elInflatableTitle.className = "inflatable-title font-bold text-[25px] text-[#A6A6A6] pb-[8px] border-b-[2px] border-transparent cursor-pointer"
+                }
+                else{
+                    elInflatableTitle.className = "inflatable-title font-bold text-[25px] text-[#009398] pb-[8px] border-b-[2px] border-[#009398] cursor-pointer"
+                    elFrameTitle.className = "frame-title font-bold text-[25px] text-[#A6A6A6] pb-[8px] border-b-[2px] border-transparent cursor-pointer"
+                }
+            })
+        })
+    }
+    else{
+        elPopopList.classList.add("h-0")
+        elPopopList.classList.remove("p-2")
+        elPopopList.classList.add("p-0")
+        renderProducts(products, "1")
+        elFrameTitle.className = "frame-title font-bold text-[25px] text-[#009398] pb-[8px] border-b-[2px] border-[#009398] cursor-pointer"
+        elInflatableTitle.className = "inflatable-title font-bold text-[25px] text-[#A6A6A6] pb-[8px] border-b-[2px] border-transparent cursor-pointer"
+    }
+})
+elSearchInpput.addEventListener("blur", function(){
+    setTimeout(() =>{
+        elPopopList.classList.add("h-0")
+        elPopopList.classList.remove("p-2")
+        elPopopList.classList.add("p-0")
+    })
+})
+// Searching functions end
